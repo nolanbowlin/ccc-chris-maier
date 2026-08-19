@@ -82,16 +82,21 @@ const SPONSOR_IMG = ['intuit-enterprise-suite', 'taillefer-commercial-group', 'w
   'corporate-environments', 'pond-company', 'bp-fast-lending', 'refined-parking-solutions',
   'pgs-usa', 'studiolensa', 'envision-construction', 'kaz-financial-group'].map(s => `sponsor-${s}.jpg`);
 
+// Member spotlight squares. Same faces off the speaker card, cut square rather
+// than 3:4, because the spotlight row is a small avatar not a portrait card.
+const MEMBER_IMG = ['kris-bennett', 'raven-thompson'].map(s => `member-${s}.jpg`);
+
 // The lineup grid holds six, and Hershberg is named in the intro as the moderator,
 // so his card is dropped from the grid rather than orphaning a seventh cell.
 const speakerOrder = (skipHershberg) =>
   skipHershberg ? SPEAKER_IMG.filter(f => !f.includes('hershberg')) : SPEAKER_IMG;
 
-function swapPlaceholders(html, { speakers = [], sponsors = [] }) {
-  let i = 0, j = 0;
+function swapPlaceholders(html, { speakers = [], sponsors = [], members = [] }) {
+  let i = 0, j = 0, k = 0;
   return html
     .replace(/placeholder-speaker\.jpg/g, () => speakers[i] ? speakers[i++] : (i++, 'placeholder-speaker.jpg'))
-    .replace(/placeholder-sponsor\.jpg/g, () => sponsors[j] ? sponsors[j++] : (j++, 'placeholder-sponsor.jpg'));
+    .replace(/placeholder-sponsor\.jpg/g, () => sponsors[j] ? sponsors[j++] : (j++, 'placeholder-sponsor.jpg'))
+    .replace(/placeholder-member\.jpg/g, () => members[k] ? members[k++] : (k++, 'placeholder-member.jpg'));
 }
 
 // Real gold partners, same sheet, in its reading order.
@@ -273,6 +278,7 @@ const FILES = {
   'newsletter/ccc-quarterly-newsletter': {
     __speakers: speakerOrder(true),
     __sponsors: SPONSOR_IMG,
+    __members: MEMBER_IMG,
     ...platinumTokens(),
     ...speakerTokens(),
     QUARTER: 'Q3',
@@ -340,6 +346,7 @@ for (const [base, data] of Object.entries(FILES)) {
 
   out = swapPlaceholders(out, {
     speakers: data.__speakers || [],
+    members: data.__members || [],
     sponsors: data.__sponsors || [],
   });
 

@@ -65,7 +65,10 @@ clients to a default serif, and Times New Roman on white is the current problem.
 
 ## Logo
 
-Base URL for every asset:
+Base URL for every asset. **Interim arrangement:** this is a Nolan Scott Team
+GitHub account, not one CCC controls. Move it to a repo or CDN CCC owns before
+this runs at volume, because if that account lapses every image in every already
+delivered CCC email breaks at once.
 
 ```
 https://nolanbowlin.github.io/ccc-brand-assets/img/
@@ -152,7 +155,7 @@ to ask.
 | Organisation | Contractors, Closers &amp; Connections (CCC) |
 | Phone | (404) 229-0492 |
 | Web | `www.contractorsclosersconnections.com` |
-| Email | `{{CHRIS_EMAIL}}`, unconfirmed |
+| Email | chris&#64;contractorsclosersconnections.com, confirmed |
 | Social | LinkedIn, YouTube |
 
 Chapters, in the order CCC lists them: Atlanta, New York City, New Jersey, Tampa,
@@ -222,7 +225,7 @@ rather than per send:
 
 | Token | What it is |
 |---|---|
-| `{{CHRIS_EMAIL}}` | The address in the `mailto:` href |
+| `{{CHRIS_EMAIL}}` | The address in the `mailto:` href. Confirmed as chris&#64;contractorsclosersconnections.com |
 | `{{CHRIS_EMAIL_DISPLAY}}` | The visible text of the same address, `@` written as `&#64;` |
 
 `{{FIRST_NAME}}` is a stand in for whatever merge field the sending platform uses,

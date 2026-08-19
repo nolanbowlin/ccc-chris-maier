@@ -310,17 +310,16 @@ footer .wrap>div{max-width:76ch}
   </div>
 
   <div class="note warn">
-    <b>Still needed from Chris before anything sends</b>
-    <p><b style="display:inline">His email address.</b> The mocks show <code>chris&#64;contractorsclosersconnections.com</code>, which is a guess. One find and replace across the folder fixes it everywhere.</p>
-    <p><b style="display:inline">Speaker headshots.</b> Every speaker slot is a placeholder card. Real ones want to be 260 by 400 and converted to greyscale, matching the site.</p>
-    <p><b style="display:inline">Sponsor logos.</b> Same. The platinum slots are white placeholder cards sized 240 by 100. The firm names in the mocks are CCC's real partners, so the list is right, only the artwork is missing.</p>
+    <b>Before anything sends</b>
+    <p><b style="display:inline">Speaker headshots.</b> Cut from the Confluence card and in place. Higher resolution originals would sharpen them, the banner crop is small.</p>
+    <p><b style="display:inline">Sponsor logos.</b> All fifteen platinum marks are cut and in place, off CCC's own sponsor sheet. Vector or higher resolution versions would print sharper.</p>
     <p><b style="display:inline">Numbers.</b> Attendance figures, ticket prices, seat counts and the quarterly stat strip are illustrative. They are the only invented content in the approval set and are flagged in <code>fill-mock.mjs</code>.</p>
   </div>
 
   <div class="note">
     <b>How the templates work</b>
     <p>Every editable value is a token in double braces, for example <code>{{EVENT_NAME}}</code> or <code>{{FIRST_NAME}}</code>. Open the file in any text editor, replace the tokens, and paste the result into the code view of whatever sends the mail. <code>{{FIRST_NAME}}</code> should be swapped for the merge field the platform uses rather than a literal name.</p>
-    <p>Images are already hosted on GitHub Pages. Do not re-upload them into the email platform's own media library, because that puts the assets somewhere CCC does not control.</p>
+    <p>Images are hosted on GitHub Pages, on a Nolan Scott Team account. That is an interim arrangement: CCC does not control that repository and should own its own before this runs at volume. Migration is a find and replace on one base URL. Do not re-upload the images into the email platform's media library either, that just moves the same problem.</p>
   </div>
 </div></section>
 

@@ -116,10 +116,10 @@ images arrive.
 
 | # | Item | Notes |
 |---|---|---|
-| 1 | **Chris's email address** | Unknown. Every template carries `{{CHRIS_EMAIL}}` and `{{CHRIS_EMAIL_DISPLAY}}`. The Luma sends come from a `user.luma-mail.com` relay, which is not it. One find and replace closes this. |
+| 1 | **Asset hosting ownership** | Every image sits on `nolanbowlin.github.io`, a Nolan Scott Team account. **CCC does not control it.** Acceptable as an interim, wrong as a permanent arrangement: if that account ever lapses, every image in every CCC email already delivered breaks at once, and delivered mail cannot be repaired. Move to a repo or CDN CCC owns. Migration is a find and replace on one base URL string across `templates/`. |
 | 2 | **Which platform sends the mail** | Not established. It changes the merge field syntax (`{{FIRST_NAME}}` is a placeholder for whatever the platform uses) and it owns the unsubscribe and preferences URLs. |
-| 3 | **Speaker headshots** | Nolan has offered to collect these. Placeholders are in place at the right ratio. Real ones want to be 260x400, converted to greyscale to match the site treatment. Six slots on the lineup template, four on the quarterly. |
-| 4 | **Sponsor logos** | Nolan has offered to collect these too. The firm names in the mocks are CCC's real partners, so the list is already correct and only the artwork is missing. Six platinum slots at 240x100 on a white field. Gold stays a text list, roughly forty names is too many for logos. |
+| 3 | **Higher resolution artwork** | Speaker portraits were cut from a 1024px wide banner, so each face is roughly 130px native and gets upscaled to fill its card. Readable, slightly soft. The originals behind that banner would fix it. Same for the fifteen sponsor marks, which came off a screenshot rather than vector files. |
+| 4 | **Marc Hershberg** | Seven speakers, six grid slots. His card is out and the intro copy names him as moderator, which is accurate. His portrait is cut and available if Chris would rather show all seven. |
 | 5 | **Gallery URLs** | `{{GALLERY_URL}}` and the per event `{{RECAP_N_GALLERY_URL}}` need real destinations. The site has a picture gallery already. |
 | 6 | **Chapter site URL pattern** | Atlanta sits at `atlanta.contractorsclosersconnections.com`. Whether every chapter has a subdomain is unconfirmed. If they do, add `{{CHAPTER_SITE_URL}}` to the event templates. |
 | 7 | **CCC owning the asset host** | Assets sit on Nolan's GitHub for now, which was the agreed interim. Migration is a find and replace on one base URL string across `templates/`. |
