@@ -28,7 +28,7 @@ const HERE = path.dirname(fileURLToPath(import.meta.url));
 
 // ---------------------------------------------------------------- shared
 
-const CHRIS_EMAIL = 'chris@contractorsclosersconnections.com'; // UNCONFIRMED, see HANDOFF.md
+const CHRIS_EMAIL = 'chris@contractorsclosersconnections.com'; // confirmed
 const BASE = {
   FIRST_NAME: 'Paul',
   CHRIS_EMAIL,
@@ -82,9 +82,10 @@ const SPONSOR_IMG = ['intuit-enterprise-suite', 'taillefer-commercial-group', 'w
   'corporate-environments', 'pond-company', 'bp-fast-lending', 'refined-parking-solutions',
   'pgs-usa', 'studiolensa', 'envision-construction', 'kaz-financial-group'].map(s => `sponsor-${s}.jpg`);
 
-// Member spotlight squares. Same faces off the speaker card, cut square rather
-// than 3:4, because the spotlight row is a small avatar not a portrait card.
-const MEMBER_IMG = ['kris-bennett', 'raven-thompson'].map(s => `member-${s}.jpg`);
+// Member spotlight reuses the speaker crop. The row renders at 88px with
+// height:auto, so the avatar does not need to be square, and a square crop of
+// this source clips the chin no matter where it is placed.
+const MEMBER_IMG = ['kris-bennett', 'raven-thompson'].map(s => `speaker-${s}.jpg`);
 
 // The lineup grid holds six, and Hershberg is named in the intro as the moderator,
 // so his card is dropped from the grid rather than orphaning a seventh cell.
