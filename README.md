@@ -29,7 +29,7 @@ package and the templates both follow it rather than the other way round.
 ## The two things to know before editing anything
 
 **Images are hosted, not attached.** Every image in every template points at
-`https://nolanbowlin.github.io/ccc-brand-assets/img/`, which is the `assets/`
+`https://nolanbowlin.github.io/ccc-chris-maier/assets/img/`, which is the `assets/`
 folder in this directory pushed to GitHub and served by GitHub Pages. Editing an
 image locally does nothing until it is committed and pushed. Never overwrite a
 file that has already gone out in a send, because mail already delivered cannot
@@ -69,11 +69,8 @@ next run.
 
 ## Publishing an asset
 
-```bash
-cd "assets" && git add -A && git commit -m "message" && git push
-```
-
-Live within a minute at the base URL plus the filename.
+Drop the file in , then commit and push this repo. Live within a
+minute at the base URL plus the filename. There is no separate image repo.
 
 ## Rules that carry over from the rest of this workspace
 

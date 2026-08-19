@@ -7,11 +7,11 @@ over HTTPS by GitHub Pages.
 **Base URL**
 
 ```
-https://nolanbowlin.github.io/ccc-brand-assets/img/
+https://nolanbowlin.github.io/ccc-chris-maier/assets/img/
 ```
 
 Reference an asset by filename appended to that base, for example
-`https://nolanbowlin.github.io/ccc-brand-assets/img/ccc-logo.png`.
+`https://nolanbowlin.github.io/ccc-chris-maier/assets/img/ccc-logo.png`.
 
 ## Why a repo and not an attachment
 

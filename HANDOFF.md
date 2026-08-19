@@ -49,9 +49,7 @@ have drifted inside a week. A preview edited by hand is lost on the next run.
 invitation with priced tiers, speaker lineup, final call, recap with photo grid,
 sponsor partners.
 
-**Asset repo.** `github.com/nolanbowlin/ccc-brand-assets`, public, GitHub Pages
-enabled. Base URL `https://nolanbowlin.github.io/ccc-brand-assets/img/`. All
-nineteen referenced URLs verified live.
+**One repo, everything in it.** `github.com/nolanbowlin/ccc-chris-maier`, public, GitHub Pages enabled. Images serve from `https://nolanbowlin.github.io/ccc-chris-maier/assets/img/`. There was briefly a second repo just for images, which existed only because this one was private at the time. Both are public now, so the split had no reason to exist.
 
 **Reference capture.** `reference/ccc-homepage-member-area-2026-08-19.pdf`. The
 original was a 17MB image only print of the member area. Re-encoded at 1000px
@@ -122,7 +120,6 @@ images arrive.
 | 4 | **Marc Hershberg** | Seven speakers, six grid slots. His card is out and the intro copy names him as moderator, which is accurate. His portrait is cut and available if Chris would rather show all seven. |
 | 5 | **Gallery URLs** | `{{GALLERY_URL}}` and the per event `{{RECAP_N_GALLERY_URL}}` need real destinations. The site has a picture gallery already. |
 | 6 | **Chapter site URL pattern** | Atlanta sits at `atlanta.contractorsclosersconnections.com`. Whether every chapter has a subdomain is unconfirmed. If they do, add `{{CHAPTER_SITE_URL}}` to the event templates. |
-| 7 | **CCC owning the asset host** | Assets sit on Nolan's GitHub for now, which was the agreed interim. Migration is a find and replace on one base URL string across `templates/`. |
 | 8 | **Real copy for a first send** | Everything shipped is structure. Nothing has been written against a live event yet. |
 
 ---

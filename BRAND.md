@@ -71,7 +71,7 @@ this runs at volume, because if that account lapses every image in every already
 delivered CCC email breaks at once.
 
 ```
-https://nolanbowlin.github.io/ccc-brand-assets/img/
+https://nolanbowlin.github.io/ccc-chris-maier/assets/img/
 ```
 
 | Placement | File | Rendered width |
