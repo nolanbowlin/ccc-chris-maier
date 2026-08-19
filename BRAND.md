@@ -107,7 +107,7 @@ highest contrast face and zooms to it, which on a 2.5:1 hero throws away the roo
 and leaves two heads at a bar. A centre crop trims top and bottom only. The room
 is the subject in event photography, so keep it.
 
-For the founder letter use `chris-maier-speaking.jpg` rather than the studio
+For the founder letter use `chris-maier-speaking-v2.jpg` rather than the studio
 headshot. It shows him doing the thing the network is built around.
 
 Never paste full resolution camera files into a recap. Gmail clips a message over
