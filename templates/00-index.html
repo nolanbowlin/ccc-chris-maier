@@ -46,11 +46,29 @@ section > .wrap > p{max-width:78ch;margin-bottom:8px}
 .card .use b{color:var(--orange-dk);text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;display:block;margin-bottom:4px}
 .card .open{display:flex;border-top:1px solid var(--rule)}
 .card .open a{flex:1;text-align:center;text-decoration:none;font:800 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:14px 8px}
-.card .open a.prev{background:var(--orange);color:#fff}
-.card .open a.tmpl{background:var(--charcoal);color:#fff}
+.card .open a.prev{background:var(--orange);color:#fff;flex:2;font-size:12px;padding:16px 8px}
+.card .open a.tmpl{background:#fff;color:var(--muted);flex:1;border-left:1px solid var(--rule)}
 .card .open a:hover{filter:brightness(1.15)}
 
+.card .hit{position:absolute;inset:0;z-index:2;display:block;text-decoration:none;
+  background:linear-gradient(to bottom,rgba(17,17,17,0) 55%,rgba(17,17,17,.86));opacity:0;transition:opacity .18s}
+.card:hover .hit{opacity:1}
+.card .hit .cue{position:absolute;left:0;right:0;bottom:16px;text-align:center;color:#fff;
+  font:800 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.card .hit .tag{position:absolute;top:0;right:0;background:var(--orange);color:#fff;
+  font:800 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:8px 11px;opacity:0}
+.card .frame::after{content:"Click to open";position:absolute;top:0;right:0;z-index:1;background:var(--orange);color:#fff;
+  font:800 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:8px 11px}
+.card:hover .frame::after{opacity:0}
+
 .wide .frame{height:520px}
+
+.howto{background:var(--charcoal);color:#fff;padding:26px 28px;margin-top:26px;
+  display:grid;grid-template-columns:auto 1fr;gap:14px 16px;align-items:start}
+.howto .n{width:26px;height:26px;background:var(--orange);color:#fff;border-radius:50%;
+  font:800 13px/26px var(--sans);text-align:center;flex:none}
+.howto .t{font-size:14.5px;line-height:1.6;color:#D5D5D5;max-width:82ch}
+.howto .t b{color:#fff}
 
 .note{background:#fff;border-left:5px solid var(--orange);padding:18px 20px;margin-top:26px}
 .note b{display:block;font:800 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dk);margin-bottom:8px}
@@ -82,6 +100,15 @@ footer .wrap>div{max-width:76ch}
 </header>
 
 <section><div class="wrap">
+  <div class="howto">
+    <div class="n">1</div>
+    <div class="t"><b>Click any thumbnail</b> to open that email full size, exactly as it lands in an inbox. The thumbnails below are live, not screenshots, so they are small on purpose.</div>
+    <div class="n">2</div>
+    <div class="t"><b>Every card has two buttons.</b> The orange one opens the finished email. The white one opens the working file underneath it, which is only useful if you are the person building the send.</div>
+    <div class="n">3</div>
+    <div class="t"><b>Tell us what to change.</b> Layout, order, wording, photography, any of it. Nothing here is fixed.</div>
+  </div>
+
   <div class="note">
     <b>Two versions of everything</b>
     <p><b style="display:inline;color:var(--orange-dk)">PREVIEW</b> is the approval copy. Real CCC content, filled in, ready to put in front of Chris. Every event, speaker and sponsor in it is genuine, taken from CCC's own sends and the live site.</p>
@@ -96,7 +123,7 @@ footer .wrap>div{max-width:76ch}
   <p>One long send per quarter. It is the only email in the suite that does more than one job, and that is deliberate: it is the piece a member forwards to someone who has never heard of CCC.</p>
   <div class="grid">
     <div class="card wide">
-      <div class="frame"><iframe src="newsletter/ccc-quarterly-newsletter-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="newsletter/ccc-quarterly-newsletter-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="newsletter/ccc-quarterly-newsletter-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">CCC Quarterly</div>
         <div class="fl">newsletter/ccc-quarterly-newsletter-{template|preview}.html</div>
@@ -104,7 +131,7 @@ footer .wrap>div{max-width:76ch}
         <div class="use"><b>Use it for</b>Once a quarter, to the full national list. Swap the recap cards and the speaker grid for whatever ran in that period.</div>
       </div>
       <div class="open">
-        <a class="prev" href="newsletter/ccc-quarterly-newsletter-preview.html">Preview</a>
+        <a class="prev" href="newsletter/ccc-quarterly-newsletter-preview.html">Preview the Email</a>
         <a class="tmpl" href="newsletter/ccc-quarterly-newsletter-template.html">Template</a>
       </div>
     </div>
@@ -118,7 +145,7 @@ footer .wrap>div{max-width:76ch}
   <div class="grid">
 
     <div class="card">
-      <div class="frame"><iframe src="correspondence/corr-01-logo-band-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="correspondence/corr-01-logo-band-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="correspondence/corr-01-logo-band-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">A. Logo band</div>
         <div class="fl">correspondence/corr-01-logo-band-{template|preview}.html</div>
@@ -132,7 +159,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="correspondence/corr-02-logo-hero-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="correspondence/corr-02-logo-hero-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="correspondence/corr-02-logo-hero-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">B. Logo band plus hero</div>
         <div class="fl">correspondence/corr-02-logo-hero-{template|preview}.html</div>
@@ -146,7 +173,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="correspondence/corr-03-letter-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="correspondence/corr-03-letter-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="correspondence/corr-03-letter-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">C. Letter</div>
         <div class="fl">correspondence/corr-03-letter-{template|preview}.html</div>
@@ -160,7 +187,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="correspondence/corr-04-hero-first-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="correspondence/corr-04-hero-first-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="correspondence/corr-04-hero-first-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">D. Hero first</div>
         <div class="fl">correspondence/corr-04-hero-first-{template|preview}.html</div>
@@ -174,7 +201,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="correspondence/corr-05-split-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="correspondence/corr-05-split-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="correspondence/corr-05-split-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">E. Split</div>
         <div class="fl">correspondence/corr-05-split-{template|preview}.html</div>
@@ -197,7 +224,7 @@ footer .wrap>div{max-width:76ch}
   <div class="grid">
 
     <div class="card">
-      <div class="frame"><iframe src="events/evt-01-invite-chapter-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="events/evt-01-invite-chapter-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="events/evt-01-invite-chapter-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">1. Chapter invitation</div>
         <div class="fl">events/evt-01-invite-chapter-{template|preview}.html</div>
@@ -211,7 +238,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="events/evt-02-invite-summit-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="events/evt-02-invite-summit-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="events/evt-02-invite-summit-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">2. Summit invitation</div>
         <div class="fl">events/evt-02-invite-summit-{template|preview}.html</div>
@@ -225,7 +252,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="events/evt-03-speaker-lineup-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="events/evt-03-speaker-lineup-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="events/evt-03-speaker-lineup-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">3. Speaker lineup</div>
         <div class="fl">events/evt-03-speaker-lineup-{template|preview}.html</div>
@@ -239,7 +266,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="events/evt-04-final-call-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="events/evt-04-final-call-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="events/evt-04-final-call-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">4. Final call</div>
         <div class="fl">events/evt-04-final-call-{template|preview}.html</div>
@@ -253,7 +280,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="events/evt-05-recap-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="events/evt-05-recap-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="events/evt-05-recap-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">5. Recap</div>
         <div class="fl">events/evt-05-recap-{template|preview}.html</div>
@@ -267,7 +294,7 @@ footer .wrap>div{max-width:76ch}
     </div>
 
     <div class="card">
-      <div class="frame"><iframe src="events/evt-06-sponsor-thanks-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="frame"><iframe src="events/evt-06-sponsor-thanks-preview.html" scrolling="no" loading="lazy"></iframe><a class="hit" href="events/evt-06-sponsor-thanks-preview.html"><span class="tag">Click to open</span><span class="cue">Open the full email</span></a></div>
       <div class="meta">
         <div class="nm">6. Sponsor partners</div>
         <div class="fl">events/evt-06-sponsor-thanks-{template|preview}.html</div>
