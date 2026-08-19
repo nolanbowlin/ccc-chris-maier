@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CCC Brand Package</title>
+<style>
+:root{
+  --orange:#EE7700; --orange-dk:#C85F00; --orange-lt:#FF9933;
+  --charcoal:#333333; --charcoal-dp:#252525; --ink:#111111;
+  --paper:#FFFFFF; --shell:#F4F4F4; --body:#4A4A4A; --muted:#8A8A8A; --rule:#E2E2E2;
+  --sans:'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,Helvetica,sans-serif;
+  --mono:ui-monospace,Consolas,'SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--shell);color:var(--body);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+
+header.mast{background:var(--ink);color:#fff}
+.mast .strip{text-align:center;padding:12px 20px;font:700 11px/1.5 var(--sans);letter-spacing:.14em;color:var(--orange);text-transform:uppercase}
+.mast .band{background:#fff;padding:26px 0;border-bottom:5px solid var(--orange)}
+.mast .band img{height:62px;display:block}
+.mast .title{background:var(--charcoal);padding:52px 0 46px}
+.mast h1{font:800 clamp(2rem,5vw,3.2rem)/1.05 var(--sans);letter-spacing:-.02em;color:#fff;text-transform:uppercase}
+.mast h1 em{font-style:normal;color:var(--orange)}
+.mast .sub{color:#BDBDBD;margin-top:14px;max-width:640px;font-size:15px}
+.mast .meta{margin-top:26px;padding-top:18px;border-top:1px solid #4a4a4a;display:flex;flex-wrap:wrap;gap:34px}
+.mast .meta div{font:600 11px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#8f8f8f}
+.mast .meta span{display:block;color:#fff;font-size:13px;letter-spacing:.02em;text-transform:none;font-family:var(--sans)}
+
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+.label{display:inline-flex;align-items:center;gap:10px;font:800 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.label::before{content:"";width:11px;height:11px;background:var(--orange);flex:none}
+h2{font:800 27px/1.2 var(--sans);color:var(--charcoal);text-transform:uppercase;letter-spacing:-.01em;margin-bottom:12px}
+h3{font:700 16px/1.3 var(--sans);color:var(--charcoal);margin:26px 0 8px}
+p{margin-bottom:14px;max-width:78ch}
+p.lede{font-size:17px;color:#3d3d3d}
+ul{margin:0 0 14px 20px}
+li{margin-bottom:7px;max-width:76ch}
+code{font:13px/1.5 var(--mono);background:#EAEAEA;padding:2px 6px;border-radius:2px;color:#222}
+a{color:var(--orange-dk)}
+
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:14px;margin:22px 0 8px}
+.sw .c{border:1px solid var(--rule);background:#fff}
+.sw .chip{height:96px}
+.sw .info{padding:12px 13px}
+.sw .nm{font:700 13px/1.3 var(--sans);color:var(--charcoal)}
+.sw .hx{font:600 12px/1.6 var(--mono);color:var(--muted);text-transform:uppercase}
+.sw .use{font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:5px}
+
+.spec{background:#fff;border:1px solid var(--rule);padding:26px;margin:18px 0}
+.spec .d1{font:800 34px/1.1 var(--sans);text-transform:uppercase;letter-spacing:-.01em;color:var(--charcoal)}
+.spec .d2{font:800 20px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.02em;color:var(--charcoal);margin-top:16px}
+.spec .d3{font:800 12px/1 var(--sans);text-transform:uppercase;letter-spacing:.16em;color:var(--orange);margin-top:16px}
+.spec .bd{font:15px/1.7 var(--sans);color:var(--body);margin-top:16px;max-width:62ch}
+.spec .note{font:600 11px/1.5 var(--mono);color:var(--muted);margin-top:18px;padding-top:14px;border-top:1px solid var(--rule);text-transform:uppercase;letter-spacing:.06em}
+
+.logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:20px 0}
+.logo{border:1px solid var(--rule);background:#fff}
+.logo .stage{display:flex;align-items:center;justify-content:center;padding:34px 24px;min-height:150px}
+.logo .stage.dark{background:var(--charcoal)}
+.logo img{max-width:100%;height:auto}
+.logo .cap{padding:12px 14px;border-top:1px solid var(--rule);font:600 11px/1.5 var(--mono);color:var(--muted);word-break:break-all}
+
+.comp{background:#fff;border:1px solid var(--rule);padding:24px;margin:16px 0}
+.comp .hd{font:800 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.comp .cap{margin:14px 0 0;font-size:13px;color:var(--muted);max-width:70ch}
+.btn-demo{display:inline-block;background:var(--orange);color:#fff;font:800 14px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:16px 34px;text-decoration:none}
+.btn-demo.wide{display:block;text-align:center;padding:20px}
+.panel-demo{background:var(--charcoal-dp);padding:24px;color:#C9C9C9}
+.panel-demo .k{font:800 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.panel-demo .v{font:700 15px/1.5 var(--sans);color:#fff;margin-bottom:18px}
+.panel-demo .v:last-child{margin-bottom:0}
+.rule-demo{height:5px;background:var(--orange)}
+.corner{position:relative;background:var(--charcoal-dp);height:120px;overflow:hidden}
+.corner::before{content:"";position:absolute;top:0;left:0;border-top:34px solid var(--orange);border-right:34px solid transparent}
+.corner::after{content:"";position:absolute;bottom:0;right:0;border-bottom:34px solid var(--orange);border-left:34px solid transparent}
+
+.sig{display:flex;gap:22px;align-items:flex-start;background:#fff;border:1px solid var(--rule);padding:24px;margin:18px 0;flex-wrap:wrap}
+.sig img{width:104px;height:104px;object-fit:cover;flex:none}
+.sig .txt{min-width:260px;flex:1}
+.sig .nm{font:800 17px/1.2 var(--sans);color:var(--charcoal)}
+.sig .ti{font:700 13px/1.5 var(--sans);color:var(--orange);margin-top:4px}
+.sig .ch{font-size:11.5px;color:var(--muted);line-height:1.7;margin-top:10px}
+.sig .cn{font-size:13px;color:var(--body);margin-top:10px}
+
+table{width:100%;border-collapse:collapse;margin:18px 0;background:#fff;font-size:14px}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{background:var(--charcoal);color:#fff;font:800 11px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+td code{font-size:12px}
+
+.do,.dont{border-left:5px solid;padding:16px 18px;background:#fff;margin:12px 0}
+.do{border-color:#2E9E5B}
+.dont{border-color:#C0392B}
+.do b,.dont b{display:block;font:800 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.do b{color:#2E9E5B}
+.dont b{color:#C0392B}
+.do p,.dont p{margin:0;font-size:14px}
+
+footer{background:var(--ink);color:#8f8f8f;padding:40px 0;font-size:13px}
+footer .wrap>div{max-width:70ch}
+footer strong{color:#fff}
+@media(max-width:600px){section{padding:38px 0}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="strip">A national business forum hosting private events &amp; summit series for the commercial real estate industry</div>
+  <div class="band"><div class="wrap"><img src="../assets/img/ccc-logo.png" alt="Contractors, Closers &amp; Connections"></div></div>
+  <div class="title"><div class="wrap">
+    <h1>Brand &amp; Email <em>Package</em></h1>
+    <div class="sub">The colours, type, components and rules that make a CCC email look like CCC. Built so any template in this folder can be opened, edited and sent without a designer in the loop.</div>
+    <div class="meta">
+      <div>Prepared for<span>Chris Maier, National President &amp; Founder</span></div>
+      <div>Prepared by<span>Nolan Scott Team</span></div>
+      <div>Version<span>1.0, August 2026</span></div>
+    </div>
+  </div></div>
+</header>
+
+<section><div class="wrap">
+  <div class="label">The short version</div>
+  <h2>Three colours, one shape language</h2>
+  <p class="lede">CCC already has a strong visual identity. It is just not showing up in the email. The website runs charcoal panels, orange section markers, heavy uppercase headings and diagonal orange corners. The outbound mail runs Times New Roman on white. This package closes that gap.</p>
+  <p>Everything here is derived from the live site rather than invented. The palette was sampled out of the logo file. The components below are the ones the site already uses, rebuilt as email safe HTML tables so they survive Outlook, Gmail and Apple Mail.</p>
+  <table>
+    <tr><th>Asset base URL</th><td><code>https://nolanbowlin.github.io/ccc-brand-assets/img/</code></td></tr>
+    <tr><th>Email width</th><td>600px fixed, single column, table layout</td></tr>
+    <tr><th>Editor</th><td>Any HTML email tool. Paste the file into a code view, or send it as is.</td></tr>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Colour</div>
+  <h2>Palette</h2>
+  <p>Two brand colours carry everything: CCC orange and CCC charcoal. Orange is a signal, not a surface. It marks the thing you want clicked, the section you want found, and the edge of a dark panel. When orange starts filling large areas that are not buttons, the brand starts looking like a discount flyer.</p>
+
+  <h3>Brand</h3>
+  <div class="sw">
+    <div class="c"><div class="chip" style="background:#EE7700"></div><div class="info"><div class="nm">CCC Orange</div><div class="hx">#EE7700</div><div class="use">Buttons, section markers, rules, links, key figures. The one accent.</div></div></div>
+    <div class="c"><div class="chip" style="background:#C85F00"></div><div class="info"><div class="nm">Orange Deep</div><div class="hx">#C85F00</div><div class="use">Link text on white where full orange fails contrast. Button borders.</div></div></div>
+    <div class="c"><div class="chip" style="background:#333333"></div><div class="info"><div class="nm">CCC Charcoal</div><div class="hx">#333333</div><div class="use">Headings, dark panels, speaker blocks. The logo's own grey.</div></div></div>
+    <div class="c"><div class="chip" style="background:#252525"></div><div class="info"><div class="nm">Charcoal Deep</div><div class="hx">#252525</div><div class="use">Event detail panels, speaker grids, anything that needs to recede.</div></div></div>
+    <div class="c"><div class="chip" style="background:#111111"></div><div class="info"><div class="nm">Ink</div><div class="hx">#111111</div><div class="use">Top strip and footer only. The frame around the message.</div></div></div>
+  </div>
+
+  <h3>Neutrals</h3>
+  <div class="sw">
+    <div class="c"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid #E2E2E2"></div><div class="info"><div class="nm">Paper</div><div class="hx">#FFFFFF</div><div class="use">Body background. Most of the email is this.</div></div></div>
+    <div class="c"><div class="chip" style="background:#F4F4F4"></div><div class="info"><div class="nm">Shell</div><div class="hx">#F4F4F4</div><div class="use">Outside the 600px column, and quiet inset cards.</div></div></div>
+    <div class="c"><div class="chip" style="background:#4A4A4A"></div><div class="info"><div class="nm">Body Text</div><div class="hx">#4A4A4A</div><div class="use">Paragraph copy on white. Not pure black, which reads harsh at 15px.</div></div></div>
+    <div class="c"><div class="chip" style="background:#8A8A8A"></div><div class="info"><div class="nm">Muted</div><div class="hx">#8A8A8A</div><div class="use">Captions, roles, dates, legal line.</div></div></div>
+    <div class="c"><div class="chip" style="background:#E2E2E2"></div><div class="info"><div class="nm">Hairline</div><div class="hx">#E2E2E2</div><div class="use">Dividers. One pixel, never a shadow.</div></div></div>
+    <div class="c"><div class="chip" style="background:#C9C9C9"></div><div class="info"><div class="nm">Panel Text</div><div class="hx">#C9C9C9</div><div class="use">Body copy inside charcoal panels.</div></div></div>
+  </div>
+
+  <div class="dont"><b>Do not</b><p>Add a second accent colour. The site has exactly one, and every sponsor logo in a CCC email brings its own. A blue or green button turns a branded send into a template someone bought.</p></div>
+  <div class="do"><b>Do</b><p>Use charcoal when you need a second surface. Depth in this brand comes from dark panels, not from more hues.</p></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Typography</div>
+  <h2>Type</h2>
+  <p>The website sets headings in a condensed geometric sans. No web font renders reliably in Outlook, so email headings use a system stack at heavy weight, uppercase, with letter spacing. That reproduces the site's voice without a font that silently falls back to Times New Roman, which is exactly what happens to CCC mail today.</p>
+
+  <div class="spec">
+    <div class="d1">Display heading</div>
+    <div class="d2">Section heading</div>
+    <div class="d3">Orange section marker</div>
+    <div class="bd">Body copy sits at 15px with 1.7 line height. Long enough to breathe on a phone, tight enough that a four paragraph note does not scroll forever. Colour is #4A4A4A on white, never pure black.</div>
+    <div class="note">Stack: 'Segoe UI', Arial, Helvetica, sans-serif</div>
+  </div>
+
+  <table>
+    <tr><th>Role</th><th>Size and weight</th><th>Treatment</th></tr>
+    <tr><td>Display heading</td><td>28px / 800</td><td>Uppercase, letter-spacing -0.2px, charcoal</td></tr>
+    <tr><td>Section heading</td><td>20px / 800</td><td>Uppercase, letter-spacing 0.4px, charcoal</td></tr>
+    <tr><td>Section marker</td><td>12px / 800</td><td>Uppercase, letter-spacing 2px, orange, with square bullet</td></tr>
+    <tr><td>Body</td><td>15px / 400, line-height 1.7</td><td>#4A4A4A</td></tr>
+    <tr><td>Small print</td><td>12px / 400, line-height 1.6</td><td>#8A8A8A</td></tr>
+    <tr><td>Button label</td><td>14px / 800</td><td>Uppercase, letter-spacing 1.5px, white on orange</td></tr>
+    <tr><td>Panel key</td><td>13px / 800</td><td>Uppercase, letter-spacing 2px, orange</td></tr>
+  </table>
+
+  <div class="dont"><b>Do not</b><p>Send in Times New Roman. It is the current default and it is the single biggest reason the mail reads as unconsidered next to the site.</p></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Logo</div>
+  <h2>Marks and clear space</h2>
+  <p>Four files cover every placement. The reversed version is not the same file with a filter over it: the charcoal is knocked out to white while the orange holds, which is what keeps the inner ring readable on a dark panel.</p>
+  <div class="logos">
+    <div class="logo"><div class="stage"><img src="../assets/img/ccc-logo.png" alt="CCC logo" style="width:230px"></div><div class="cap">ccc-logo.png</div></div>
+    <div class="logo"><div class="stage dark"><img src="../assets/img/ccc-logo-reversed.png" alt="CCC logo reversed" style="width:230px"></div><div class="cap">ccc-logo-reversed.png</div></div>
+    <div class="logo"><div class="stage"><img src="../assets/img/ccc-mark.png" alt="CCC mark" style="width:96px"></div><div class="cap">ccc-mark.png</div></div>
+    <div class="logo"><div class="stage dark"><img src="../assets/img/ccc-mark-reversed.png" alt="CCC mark reversed" style="width:96px"></div><div class="cap">ccc-mark-reversed.png</div></div>
+  </div>
+  <table>
+    <tr><th>Placement</th><th>File</th><th>Rendered width</th></tr>
+    <tr><td>Email header band, white</td><td><code>ccc-logo.png</code></td><td>200px</td></tr>
+    <tr><td>Email footer, ink background</td><td><code>ccc-logo-reversed.png</code></td><td>150px</td></tr>
+    <tr><td>Compact header, single line</td><td><code>ccc-mark.png</code></td><td>36px</td></tr>
+    <tr><td>Dark panel corner, watermark</td><td><code>ccc-mark-reversed.png</code></td><td>40px</td></tr>
+  </table>
+  <div class="do"><b>Do</b><p>Leave clear space equal to the height of the C mark on every side. In email that means at least 20px of padding inside the logo band.</p></div>
+  <div class="dont"><b>Do not</b><p>Place the full colour logo on charcoal, or the reversed logo on white. Both leave half the mark invisible.</p></div>
+  <div class="dont"><b>Do not</b><p>Put the logo on orange. The orange ring disappears into the field. If a section has to be orange, the logo goes above or below it, not inside it.</p></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Components</div>
+  <h2>The parts every template is built from</h2>
+
+  <div class="comp">
+    <div class="hd">Primary button, full width</div>
+    <a class="btn-demo wide" href="#">Request an Invitation</a>
+    <p class="cap">Square corners. The site uses a full bleed orange bar for its main call to action and it is the most recognisable thing on the page. Use one per email.</p>
+  </div>
+
+  <div class="comp">
+    <div class="hd">Secondary button, inline</div>
+    <a class="btn-demo" href="#">Add to Calendar</a>
+    <p class="cap">Same treatment at inline width, for the second action. Never more than two buttons in one message.</p>
+  </div>
+
+  <div class="comp">
+    <div class="hd">Detail panel</div>
+    <div class="panel-demo">
+      <div class="k">Date</div><div class="v">Tuesday, November 10, 2026<br>10:00 AM to 2:00 PM</div>
+      <div class="k">Location</div><div class="v">City Winery at Ponce City Market<br>650 North Avenue NE, Atlanta GA</div>
+    </div>
+    <p class="cap">Lifted straight off the site's event page. Orange key, white value, charcoal ground. Every event email carries one.</p>
+  </div>
+
+  <div class="comp">
+    <div class="hd">Section marker</div>
+    <div class="label" style="margin:0">Featured Speakers</div>
+    <p class="cap">Orange square, then the label in orange caps. This is the brand's paragraph mark. Use it to open every section.</p>
+  </div>
+
+  <div class="comp">
+    <div class="hd">Orange rule</div>
+    <div class="rule-demo"></div>
+    <p class="cap">5px, full width, directly under the logo band. It is what separates a CCC email from a plain white one at a glance in the preview pane.</p>
+  </div>
+
+  <div class="comp">
+    <div class="hd">Diagonal corners on dark panels</div>
+    <div class="corner"></div>
+    <p class="cap">The speaker cards on the site carry orange diagonals at opposing corners. In email this is optional decoration: it needs background images to render, so treat it as a nice to have that degrades to a plain charcoal panel in Outlook.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Voice</div>
+  <h2>How a CCC email reads</h2>
+
+  <div class="comp" style="margin-top:0">
+    <div class="hd">The lines CCC already uses</div>
+    <div style="font:800 22px/1.25 var(--sans);text-transform:uppercase;color:var(--charcoal);">Commercial Real Estate &amp; Construction<br>Networking Reimagined</div>
+    <div style="font:700 13px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-top:14px;">Making Business Personal</div>
+    <p class="cap">Both are on the event banner, so they are already in the room. The long line is the positioning and belongs on the site and in decks. The short one is the tagline and is the better fit for email, where it sits under the logo or closes the footer. The site's own top strip carries a third line, "a national business forum hosting private events and summit series for the commercial real estate industry," which is what the templates use as the black strip above the logo.</p>
+  </div>
+
+  <p>The audience is senior: principals, CEOs, developers, brokers with their own deal flow. They get invited to everything. The email has to answer three questions in the first screen, or it gets archived.</p>
+  <ul>
+    <li><b>What is it.</b> Named event, one line on who is in the room.</li>
+    <li><b>When and where.</b> Date, time, venue. In the panel, not buried in a paragraph.</li>
+    <li><b>What do I do now.</b> One button.</li>
+  </ul>
+  <h3>Rules</h3>
+  <ul>
+    <li>No em dashes. Commas, periods, or rewrite the sentence.</li>
+    <li>No filler openers. Never "I hope this email finds you well."</li>
+    <li>Name the room, not the concept. "Senior CRE executives across multifamily, industrial and hospitality" beats "industry leaders."</li>
+    <li>Say the ask once, plainly. "Reply yes and I will hold your seat" outperforms three paragraphs of build up.</li>
+    <li>Short correspondence stays under 120 words. If it needs more, it is an event email, not a note.</li>
+    <li>Speaker names carry title and firm on the next line, in that order, every time.</li>
+  </ul>
+  <div class="do"><b>Do</b><p>Keep the confirmation emails as direct as the current ones are. The problem with the existing short sends is the packaging, not the writing. The templates preserve the plain speech and put a frame around it.</p></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Signature</div>
+  <h2>The block that closes every send</h2>
+  <p>One signature, used everywhere, so the chapter list becomes a credential rather than a footer someone skims. The current version drifts: some sends say President &amp; Founder with 13 chapters, later ones say National President &amp; Founder with 20. Pick one and freeze it. The templates ship with the longer, more recent version.</p>
+
+  <div class="sig">
+    <img src="../assets/img/chris-maier-headshot.jpg" alt="Chris Maier">
+    <div class="txt">
+      <div class="nm">Chris Maier</div>
+      <div class="ti">National President &amp; Founder</div>
+      <div class="cn">Contractors, Closers &amp; Connections (CCC)</div>
+      <div class="ch">Atlanta &middot; New York City &middot; New Jersey &middot; Tampa &middot; Orlando &middot; Miami &middot; Dallas &middot; Fort Worth &middot; Phoenix &middot; Greenville &middot; Charlotte &middot; Raleigh &middot; Washington DC &middot; Kansas City &middot; Northwest Arkansas &middot; Savannah &middot; Nashville &middot; Boston &middot; Nebraska &middot; Beverly Hills</div>
+      <div class="cn">(404) 229-0492 &nbsp;|&nbsp; atlanta.contractorsclosersconnections.com</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>Field</th><th>Value</th></tr>
+    <tr><td>Name</td><td>Chris Maier</td></tr>
+    <tr><td>Title</td><td>National President &amp; Founder</td></tr>
+    <tr><td>Organisation</td><td>Contractors, Closers &amp; Connections (CCC)</td></tr>
+    <tr><td>Phone</td><td>(404) 229-0492</td></tr>
+    <tr><td>Web</td><td>atlanta.contractorsclosersconnections.com</td></tr>
+    <tr><td>Social</td><td>LinkedIn, YouTube</td></tr>
+    <tr><td>Headshot</td><td><code>chris-maier-headshot.jpg</code>, 400 square, and <code>chris-maier-headshot-sm.jpg</code> at 260 for signature blocks. For the founder letter use <code>chris-maier-speaking.jpg</code>, which shows him at the microphone rather than in a studio. Two further event candids sit in the same folder.</td></tr>
+    <tr><td>Email</td><td><code>{{CHRIS_EMAIL}}</code>, still to be confirmed. Every template carries the token so one find and replace sets it everywhere.</td></tr>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Build rules</div>
+  <h2>What breaks email, and how these files avoid it</h2>
+  <table>
+    <tr><th>Rule</th><th>Why</th></tr>
+    <tr><td>Tables for layout, never flexbox or grid</td><td>Outlook renders with Word's engine. Modern CSS layout collapses to a single unstyled column.</td></tr>
+    <tr><td>Inline styles on every element</td><td>Gmail strips most of a <code>&lt;style&gt;</code> block. Anything that has to survive is inline.</td></tr>
+    <tr><td>600px fixed width</td><td>The widest column that fits every desktop preview pane without horizontal scroll.</td></tr>
+    <tr><td>Images always carry <code>alt</code> and an explicit <code>width</code></td><td>Roughly half of recipients see the email with images off first. The alt text has to carry the message.</td></tr>
+    <tr><td>No background images for anything load bearing</td><td>Outlook ignores most of them. Decoration only.</td></tr>
+    <tr><td>Buttons are table cells with a background colour, not styled links</td><td>A padded <code>&lt;a&gt;</code> renders as bare text in Outlook. The cell keeps the orange block.</td></tr>
+    <tr><td><code>@</code> encoded as <code>&amp;#64;</code> in visible email addresses</td><td>Some proxies rewrite raw addresses into an obfuscation script that renders as "[email protected]".</td></tr>
+    <tr><td>Raw canonical URLs only</td><td>Never paste a link copied out of Gmail. Those carry a <code>google.com/url?q=</code> wrapper that breaks tracking and looks like phishing.</td></tr>
+    <tr><td>Every image on the GitHub Pages host</td><td>Mail lives in inboxes forever. An image on a platform CCC does not control becomes a broken box the day that platform changes.</td></tr>
+  </table>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Template suite</div>
+  <h2>What is in the folder</h2>
+  <table>
+    <tr><th>File</th><th>Use</th></tr>
+    <tr><td><code>newsletter/ccc-quarterly-newsletter.html</code></td><td>The quarterly. Founder letter, next event, quarter in review, speakers, chapter report, sponsors, ways to get involved.</td></tr>
+    <tr><td><code>correspondence/corr-01-logo-band.html</code></td><td>Everyday note. Logo band, orange rule, body, signature. The workhorse.</td></tr>
+    <tr><td><code>correspondence/corr-02-logo-hero.html</code></td><td>Same with a hero image under the logo, for when the note references an event.</td></tr>
+    <tr><td><code>correspondence/corr-03-letter.html</code></td><td>No logo above the fold. A rule, the letter, the signature. Closest to a personal one to one email.</td></tr>
+    <tr><td><code>correspondence/corr-04-hero-first.html</code></td><td>Hero first with a headline bar, logo held back to the footer. Highest impact of the four.</td></tr>
+    <tr><td><code>events/evt-01-invite-chapter.html</code></td><td>Free chapter event invitation.</td></tr>
+    <tr><td><code>events/evt-02-invite-summit.html</code></td><td>Flagship summit invitation with ticket tiers. Replaces the Luma send.</td></tr>
+    <tr><td><code>events/evt-03-speaker-lineup.html</code></td><td>Speaker announcement, dark grid, one card per speaker.</td></tr>
+    <tr><td><code>events/evt-04-final-call.html</code></td><td>Short reminder. Seats remaining, one button.</td></tr>
+    <tr><td><code>events/evt-05-recap.html</code></td><td>Post event recap with photo grid and gallery link.</td></tr>
+    <tr><td><code>events/evt-06-sponsor-thanks.html</code></td><td>Sponsor thank you with platinum and gold tiers.</td></tr>
+  </table>
+  <p>Open <code>templates/00-index.html</code> to see all of them side by side.</p>
+</div></section>
+
+<footer><div class="wrap"><div>
+  <strong>Values are canonical in <code>BRAND.md</code>, one directory up.</strong> This page is the same system presented to be looked at. A hex, size or URL that changes gets changed there first, then here, then in <code>templates/</code>.
+  <br><br>
+  <strong>CCC Brand &amp; Email Package, version 1.0.</strong> Prepared by the Nolan Scott Team for Contractors, Closers &amp; Connections.
+  Colour values sampled from the CCC logo file. Components derived from the live Atlanta chapter site captured 19 August 2026, a copy of which sits in <code>reference/</code>.
+  Photography is CCC's own Atlanta event coverage.
+</div></div></footer>
+
+</body>
+</html>

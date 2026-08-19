@@ -1,0 +1,17 @@
+# assets/ is its own git repo with its own remote, and it is PUBLIC because
+# GitHub Pages serves it as the image host for every CCC email. It is excluded
+# here so git does not try to nest one repo inside another.
+#
+# Nothing is lost by excluding it. Between the two repos everything is backed up:
+#
+#   nolanbowlin/ccc-brand-assets   public    assets/, the published images
+#   nolanbowlin/ccc-chris-maier    private   everything else, including source/
+#
+# Publish an image:  cd assets && git add -A && git commit -m "..." && git push
+assets/
+
+# OS and editor noise
+desktop.ini
+Thumbs.db
+.DS_Store
+*.swp

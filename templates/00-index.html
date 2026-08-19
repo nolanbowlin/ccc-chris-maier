@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CCC Template Suite</title>
+<style>
+:root{
+  --orange:#EE7700; --orange-dk:#C85F00;
+  --charcoal:#333333; --charcoal-dp:#252525; --ink:#111111;
+  --shell:#F4F4F4; --body:#4A4A4A; --muted:#8A8A8A; --rule:#E2E2E2;
+  --sans:'Segoe UI',-apple-system,BlinkMacSystemFont,Arial,Helvetica,sans-serif;
+  --mono:ui-monospace,Consolas,'SF Mono',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--shell);color:var(--body);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+
+header.mast{background:var(--ink)}
+.mast .strip{text-align:center;padding:12px 20px;font:700 11px/1.5 var(--sans);letter-spacing:.14em;color:var(--orange);text-transform:uppercase}
+.mast .band{background:#fff;padding:24px 0;border-bottom:5px solid var(--orange)}
+.mast .band img{height:56px;display:block}
+.mast .title{background:var(--charcoal);padding:46px 0 40px}
+.mast h1{font:800 clamp(1.9rem,4.4vw,2.9rem)/1.05 var(--sans);letter-spacing:-.02em;color:#fff;text-transform:uppercase}
+.mast h1 em{font-style:normal;color:var(--orange)}
+.mast .sub{color:#BDBDBD;margin-top:12px;max-width:680px;font-size:15px}
+.mast .links{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.mast .links a{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font:800 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:12px 18px}
+.mast .links a.ghost{background:transparent;color:#fff;border:1px solid #555}
+
+section{padding:46px 0 10px}
+.label{display:inline-flex;align-items:center;gap:10px;font:800 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.label::before{content:"";width:11px;height:11px;background:var(--orange);flex:none}
+h2{font:800 25px/1.2 var(--sans);color:var(--charcoal);text-transform:uppercase;margin-bottom:8px}
+section > .wrap > p{max-width:78ch;margin-bottom:8px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;margin-top:26px}
+.card{background:#fff;border:1px solid var(--rule);display:flex;flex-direction:column}
+.card .frame{position:relative;height:400px;overflow:hidden;background:#F4F4F4;border-bottom:1px solid var(--rule)}
+.card iframe{width:600px;border:0;transform-origin:0 0;position:absolute;top:0;left:0;pointer-events:none}
+.card .meta{padding:18px 20px;flex:1;display:flex;flex-direction:column}
+.card .nm{font:800 15px/1.3 var(--sans);text-transform:uppercase;color:var(--charcoal)}
+.card .fl{font:600 11px/1.5 var(--mono);color:var(--muted);margin-top:5px;word-break:break-all}
+.card .ds{font-size:13.5px;line-height:1.6;color:var(--body);margin-top:11px;flex:1}
+.card .use{font-size:12px;line-height:1.55;color:var(--muted);margin-top:11px;padding-top:11px;border-top:1px solid var(--rule)}
+.card .use b{color:var(--orange-dk);text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;display:block;margin-bottom:4px}
+.card .open{display:flex;border-top:1px solid var(--rule)}
+.card .open a{flex:1;text-align:center;text-decoration:none;font:800 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:14px 8px}
+.card .open a.prev{background:var(--orange);color:#fff}
+.card .open a.tmpl{background:var(--charcoal);color:#fff}
+.card .open a:hover{filter:brightness(1.15)}
+
+.wide .frame{height:520px}
+
+.note{background:#fff;border-left:5px solid var(--orange);padding:18px 20px;margin-top:26px}
+.note b{display:block;font:800 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dk);margin-bottom:8px}
+.note p{font-size:14px;max-width:80ch}
+.note p + p{margin-top:10px}
+.note.warn{border-left-color:#C0392B}
+.note.warn b{color:#C0392B}
+code{font:12.5px/1.5 var(--mono);background:#EAEAEA;padding:2px 6px;color:#222}
+
+footer{background:var(--ink);color:#8f8f8f;padding:36px 0;font-size:13px;margin-top:50px}
+footer strong{color:#fff}
+footer .wrap>div{max-width:76ch}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="strip">A national business forum hosting private events &amp; summit series for the commercial real estate industry</div>
+  <div class="band"><div class="wrap"><img src="../assets/img/ccc-logo.png" alt="Contractors, Closers &amp; Connections"></div></div>
+  <div class="title"><div class="wrap">
+    <h1>Email <em>Template Suite</em></h1>
+    <div class="sub">Twelve templates covering the quarterly, everyday correspondence and the full event cycle. Every one ships twice, side by side in the same folder: a <b>-template</b> carrying the tokens you fill in, and a <b>-preview</b> showing real CCC content already in the design. The thumbnails below are the previews, live rendered rather than screenshots.</div>
+    <div class="links">
+      <a href="../brand/ccc-brand-package.html">Brand Package</a>
+      <a class="ghost" href="../BRAND.md">BRAND.md</a>
+      <a class="ghost" href="https://github.com/nolanbowlin/ccc-brand-assets">Asset Repo</a>
+    </div>
+  </div></div>
+</header>
+
+<section><div class="wrap">
+  <div class="note">
+    <b>Two versions of everything</b>
+    <p><b style="display:inline;color:var(--orange-dk)">PREVIEW</b> is the approval copy. Real CCC content, filled in, ready to put in front of Chris. Every event, speaker and sponsor in it is genuine, taken from CCC's own sends and the live site.</p>
+    <p><b style="display:inline;color:var(--charcoal)">TEMPLATE</b> is the working file, with <code>{{TOKENS}}</code> where the content goes. This is the one that gets edited and sent.</p>
+    <p>Each preview is generated from the template beside it by <code>fill-mock.mjs</code>. Change a layout in the template and re-run <code>node fill-mock.mjs</code> to bring the previews back in step. Never hand edit a <code>-preview.html</code>, it gets overwritten.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Quarterly</div>
+  <h2>The newsletter</h2>
+  <p>One long send per quarter. It is the only email in the suite that does more than one job, and that is deliberate: it is the piece a member forwards to someone who has never heard of CCC.</p>
+  <div class="grid">
+    <div class="card wide">
+      <div class="frame"><iframe src="newsletter/ccc-quarterly-newsletter-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">CCC Quarterly</div>
+        <div class="fl">newsletter/ccc-quarterly-newsletter-{template|preview}.html</div>
+        <div class="ds">Founder letter, the next event with a detail panel, the quarter in review with a numbers strip and three recap cards, a dark speaker grid, the chapter report, member spotlights, sponsor tiers and three ways to get involved.</div>
+        <div class="use"><b>Use it for</b>Once a quarter, to the full national list. Swap the recap cards and the speaker grid for whatever ran in that period.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="newsletter/ccc-quarterly-newsletter-preview.html">Preview</a>
+        <a class="tmpl" href="newsletter/ccc-quarterly-newsletter-template.html">Template</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Correspondence</div>
+  <h2>Short notes, five ways</h2>
+  <p>The same message packaged five different ways so the register can shift without the brand shifting. Body copy in all five should stay under 120 words. Anything longer is an event email pretending to be a note.</p>
+  <div class="grid">
+
+    <div class="card">
+      <div class="frame"><iframe src="correspondence/corr-01-logo-band-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">A. Logo band</div>
+        <div class="fl">correspondence/corr-01-logo-band-{template|preview}.html</div>
+        <div class="ds">Logo, orange rule, headline, two paragraphs, one optional button, full signature. No hero image.</div>
+        <div class="use"><b>Use it for</b>The default. Confirmations, follow ups, introductions, anything going to more than one person.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="correspondence/corr-01-logo-band-preview.html">Preview</a>
+        <a class="tmpl" href="correspondence/corr-01-logo-band-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="correspondence/corr-02-logo-hero-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">B. Logo band plus hero</div>
+        <div class="fl">correspondence/corr-02-logo-hero-{template|preview}.html</div>
+        <div class="ds">Template A with a hero image under the rule and an optional dark date and location panel.</div>
+        <div class="use"><b>Use it for</b>Notes that reference a specific event. The picture does the work the second paragraph would otherwise have to do.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="correspondence/corr-02-logo-hero-preview.html">Preview</a>
+        <a class="tmpl" href="correspondence/corr-02-logo-hero-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="correspondence/corr-03-letter-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">C. Letter</div>
+        <div class="fl">correspondence/corr-03-letter-{template|preview}.html</div>
+        <div class="ds">No masthead. An orange rule, the letter, an inline link instead of a button, and the signature carrying the logo.</div>
+        <div class="use"><b>Use it for</b>One to one email, and anything that should not look like a send. Closest to what CCC mails today, with a frame around it.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="correspondence/corr-03-letter-preview.html">Preview</a>
+        <a class="tmpl" href="correspondence/corr-03-letter-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="correspondence/corr-04-hero-first-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">D. Hero first</div>
+        <div class="fl">correspondence/corr-04-hero-first-{template|preview}.html</div>
+        <div class="ds">Photograph at the very top, orange rule, charcoal headline bar, then the note. The logo is held back to the footer.</div>
+        <div class="use"><b>Use it for</b>The highest impact of the five. Cold or reactivation sends where the image has to earn the next three seconds.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="correspondence/corr-04-hero-first-preview.html">Preview</a>
+        <a class="tmpl" href="correspondence/corr-04-hero-first-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="correspondence/corr-05-split-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">E. Split</div>
+        <div class="fl">correspondence/corr-05-split-{template|preview}.html</div>
+        <div class="ds">Logo on one line with the market on the right, then the body and a portrait image side by side, then the signature. Columns stack on a phone.</div>
+        <div class="use"><b>Use it for</b>A note that wants a face next to it without giving up half the screen to a banner. The most personal of the five that still carries the masthead.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="correspondence/corr-05-split-preview.html">Preview</a>
+        <a class="tmpl" href="correspondence/corr-05-split-template.html">Template</a>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="label">Events</div>
+  <h2>The full cycle</h2>
+  <p>Six templates in the order they send: invitation, lineup, final call, recap, and the sponsor piece that runs on its own schedule. Together they replace what is currently split between Luma and plain text.</p>
+  <div class="grid">
+
+    <div class="card">
+      <div class="frame"><iframe src="events/evt-01-invite-chapter-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">1. Chapter invitation</div>
+        <div class="fl">events/evt-01-invite-chapter-{template|preview}.html</div>
+        <div class="ds">Hero, charcoal title bar, date and location panel, the format as a timed agenda, one button.</div>
+        <div class="use"><b>Sends</b>Three to four weeks out. Free chapter events.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="events/evt-01-invite-chapter-preview.html">Preview</a>
+        <a class="tmpl" href="events/evt-01-invite-chapter-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="events/evt-02-invite-summit-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">2. Summit invitation</div>
+        <div class="fl">events/evt-02-invite-summit-{template|preview}.html</div>
+        <div class="ds">Flagship version with a numbers strip and three priced attendance tiers, the third styled as the sponsor tier.</div>
+        <div class="use"><b>Sends</b>Six weeks out for paid events. Point the button at Luma or any other checkout. This replaces the Luma-branded send, not Luma itself.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="events/evt-02-invite-summit-preview.html">Preview</a>
+        <a class="tmpl" href="events/evt-02-invite-summit-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="events/evt-03-speaker-lineup-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">3. Speaker lineup</div>
+        <div class="fl">events/evt-03-speaker-lineup-{template|preview}.html</div>
+        <div class="ds">Six speaker cards on charcoal, name in orange with title and firm beneath, matching the treatment on the site.</div>
+        <div class="use"><b>Sends</b>Two weeks out. The lineup is why people commit, so it earns its own email rather than a paragraph in the invite.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="events/evt-03-speaker-lineup-preview.html">Preview</a>
+        <a class="tmpl" href="events/evt-03-speaker-lineup-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="events/evt-04-final-call-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">4. Final call</div>
+        <div class="fl">events/evt-04-final-call-{template|preview}.html</div>
+        <div class="ds">No hero, no agenda, no speakers. A charcoal block with the countdown and the logistics, three sentences, one button.</div>
+        <div class="use"><b>Sends</b>48 to 72 hours out. Everyone on this list has seen the rest already.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="events/evt-04-final-call-preview.html">Preview</a>
+        <a class="tmpl" href="events/evt-04-final-call-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="events/evt-05-recap-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">5. Recap</div>
+        <div class="fl">events/evt-05-recap-{template|preview}.html</div>
+        <div class="ds">Six photo grid, gallery button, six platinum logo slots with the gold list beneath, and the next date in a charcoal block at the bottom.</div>
+        <div class="use"><b>Sends</b>Inside 72 hours. Thanks the room, proves the room to everyone who missed it, and books the next one.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="events/evt-05-recap-preview.html">Preview</a>
+        <a class="tmpl" href="events/evt-05-recap-template.html">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="frame"><iframe src="events/evt-06-sponsor-thanks-preview.html" scrolling="no" loading="lazy"></iframe></div>
+      <div class="meta">
+        <div class="nm">6. Sponsor partners</div>
+        <div class="fl">events/evt-06-sponsor-thanks-{template|preview}.html</div>
+        <div class="ds">Platinum logo wall, gold list, then a charcoal recruitment block with three benefits and a deck request button.</div>
+        <div class="use"><b>Sends</b>Annually, and again when partnerships open. Two audiences at once: the sponsors see their name, everyone else sees the wall.</div>
+      </div>
+      <div class="open">
+        <a class="prev" href="events/evt-06-sponsor-thanks-preview.html">Preview</a>
+        <a class="tmpl" href="events/evt-06-sponsor-thanks-template.html">Template</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note warn">
+    <b>Still needed from Chris before anything sends</b>
+    <p><b style="display:inline">His email address.</b> The mocks show <code>chris&#64;contractorsclosersconnections.com</code>, which is a guess. One find and replace across the folder fixes it everywhere.</p>
+    <p><b style="display:inline">Speaker headshots.</b> Every speaker slot is a placeholder card. Real ones want to be 260 by 400 and converted to greyscale, matching the site.</p>
+    <p><b style="display:inline">Sponsor logos.</b> Same. The platinum slots are white placeholder cards sized 240 by 100. The firm names in the mocks are CCC's real partners, so the list is right, only the artwork is missing.</p>
+    <p><b style="display:inline">Numbers.</b> Attendance figures, ticket prices, seat counts and the quarterly stat strip are illustrative. They are the only invented content in the approval set and are flagged in <code>fill-mock.mjs</code>.</p>
+  </div>
+
+  <div class="note">
+    <b>How the templates work</b>
+    <p>Every editable value is a token in double braces, for example <code>{{EVENT_NAME}}</code> or <code>{{FIRST_NAME}}</code>. Open the file in any text editor, replace the tokens, and paste the result into the code view of whatever sends the mail. <code>{{FIRST_NAME}}</code> should be swapped for the merge field the platform uses rather than a literal name.</p>
+    <p>Images are already hosted on GitHub Pages. Do not re-upload them into the email platform's own media library, because that puts the assets somewhere CCC does not control.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><div>
+  <strong>CCC Email Template Suite, version 1.1.</strong> Prepared by the Nolan Scott Team for Contractors, Closers &amp; Connections.
+  Assets served from <code>nolanbowlin.github.io/ccc-brand-assets/img/</code>. Palette and components derived from the live CCC site. Values are canonical in <code>BRAND.md</code>.
+</div></div></footer>
+
+<script>
+// Scale each preview iframe so a 600px email reads as a thumbnail in the card.
+function fit(){
+  document.querySelectorAll('.card .frame').forEach(function(f){
+    var el = f.querySelector('iframe');
+    var s = f.clientWidth / 600;
+    el.style.transformOrigin = '0 0';
+    el.style.transform = 'scale(' + s + ')';
+    el.style.height = Math.ceil(f.clientHeight / s) + 'px';
+  });
+}
+window.addEventListener('load', fit);
+window.addEventListener('resize', fit);
+</script>
+
+</body>
+</html>
