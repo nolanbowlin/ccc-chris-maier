@@ -95,8 +95,9 @@ least 20px of padding inside the logo band.
 | Recap and gallery grid | 560 x 400 | `photo-*.jpg` |
 | Portrait, founder letter, split layout | 400 x 500 | `chris-maier-*.jpg` |
 | Signature headshot | 400 and 260 square | `chris-maier-headshot.jpg`, `-sm.jpg` |
-| Speaker card | 260 x 340, greyscale | matches the site treatment |
-| Sponsor logo | 240 x 100 on a white card | never on orange, never on bare grey |
+| Speaker card, upcoming | 260 x 342, colour | `speaker-*.jpg` |
+| Speaker card, past archive | 260 x 342, greyscale | `speaker-*-mono.jpg`. The site uses colour for an upcoming lineup and greyscale for past speakers. Keep that split. |
+| Sponsor logo | 240 x 100 on a white card | `sponsor-*.jpg`. Trim the white margin, then recentre, so marks sit consistently. Never on orange, never on bare grey. |
 
 **Crop from the centre, never by saliency.** An automatic attention crop finds the
 highest contrast face and zooms to it, which on a 2.5:1 hero throws away the room

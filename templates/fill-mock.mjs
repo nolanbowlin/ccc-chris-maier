@@ -72,6 +72,28 @@ const PLATINUM = ['Intuit Enterprise Suite', 'Taillefer Commercial Group', 'Wate
   'PGS USA', 'StudioLensa', 'Envision Construction', 'KAZ Financial Group'];
 const platinumTokens = () => Object.fromEntries(PLATINUM.map((n, i) => [`PLATINUM_${i + 1}`, n]));
 
+// Real artwork, cut from CCC's own Confluence speaker card and sponsor sheet.
+// The templates carry placeholders so they render on their own. The preview
+// swaps them positionally: the Nth placeholder becomes the Nth real image.
+const SPEAKER_IMG = ['marc-hershberg', 'ken-lankford', 'james-reid', 'cesar-contreras',
+  'kris-bennett', 'krut-patel', 'raven-thompson'].map(s => `speaker-${s}.jpg`);
+const SPONSOR_IMG = ['intuit-enterprise-suite', 'taillefer-commercial-group', 'water-removal-services',
+  'hyatt-regency-villa-christina', 'contineo-group', 'insignia', 'seyfarth-shaw',
+  'corporate-environments', 'pond-company', 'bp-fast-lending', 'refined-parking-solutions',
+  'pgs-usa', 'studiolensa', 'envision-construction', 'kaz-financial-group'].map(s => `sponsor-${s}.jpg`);
+
+// The lineup grid holds six, and Hershberg is named in the intro as the moderator,
+// so his card is dropped from the grid rather than orphaning a seventh cell.
+const speakerOrder = (skipHershberg) =>
+  skipHershberg ? SPEAKER_IMG.filter(f => !f.includes('hershberg')) : SPEAKER_IMG;
+
+function swapPlaceholders(html, { speakers = [], sponsors = [] }) {
+  let i = 0, j = 0;
+  return html
+    .replace(/placeholder-speaker\.jpg/g, () => speakers[i] ? speakers[i++] : (i++, 'placeholder-speaker.jpg'))
+    .replace(/placeholder-sponsor\.jpg/g, () => sponsors[j] ? sponsors[j++] : (j++, 'placeholder-sponsor.jpg'));
+}
+
 // Real gold partners, same sheet, in its reading order.
 const GOLD = 'AMVAL Insurance Solutions, DeNyse Companies, ACCRE, Birdsey Group, '
   + 'Jaryd P. Green &amp; Associates, HRE Real Estate, Commercial Collection Corp. of NY, '
@@ -200,6 +222,7 @@ const FILES = {
   },
 
   'events/evt-03-speaker-lineup': {
+    __speakers: speakerOrder(true),
     ...CONFLUENCE,
     ...speakerTokens(),
     PANEL_POSITIONING_ONE_SENTENCE: 'Seven senior operators across affordable housing, multifamily, industrial, retail, hospitality and mixed use.',
@@ -217,6 +240,7 @@ const FILES = {
   },
 
   'events/evt-05-recap': {
+    __sponsors: SPONSOR_IMG,
     ...platinumTokens(),
     EVENT_NAME: 'CCC &ldquo;AI Revolution&rdquo;',
     EVENT_DATE_SHORT: 'July 23',
@@ -232,6 +256,7 @@ const FILES = {
   },
 
   'events/evt-06-sponsor-thanks': {
+    __sponsors: SPONSOR_IMG,
     ...platinumTokens(),
     YEAR: '2026',
     NEXT_YEAR: '2027',
@@ -246,6 +271,8 @@ const FILES = {
   },
 
   'newsletter/ccc-quarterly-newsletter': {
+    __speakers: speakerOrder(true),
+    __sponsors: SPONSOR_IMG,
     ...platinumTokens(),
     ...speakerTokens(),
     QUARTER: 'Q3',
@@ -310,6 +337,11 @@ for (const [base, data] of Object.entries(FILES)) {
   const map = { ...BASE, ...data };
   let out = src.replace(/\{\{([A-Z0-9_]+)\}\}/g, (m, k) =>
     Object.prototype.hasOwnProperty.call(map, k) ? map[k] : m);
+
+  out = swapPlaceholders(out, {
+    speakers: data.__speakers || [],
+    sponsors: data.__sponsors || [],
+  });
 
   const missed = [...new Set((out.match(/\{\{[A-Z0-9_]+\}\}/g) || []))];
   if (missed.length) leftovers.push(`${base}: ${missed.join(', ')}`);
