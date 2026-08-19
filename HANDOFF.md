@@ -128,8 +128,8 @@ images arrive.
 
 **Garrett Williamson, Peachtree Planning.** Same pattern, separate client.
 `Garrett - Retirement Number/brand-assets/` is pushed to
-`github.com/nolanbowlin/peachtree-brand-assets` with Pages enabled, base URL
-`https://nolanbowlin.github.io/peachtree-brand-assets/img/`. Holds the Peachtree
+`github.com/nolanbowlin/garrett-retirement-number`, one repo holding everything,
+with images at `https://nolanbowlin.github.io/garrett-retirement-number/assets/img/`. Holds the Peachtree
 lockup, a reversed version for the slate and charcoal bands, the red mark, and
 Garrett's headshot at two sizes. The palette and type are already documented in
 `Garrett - Retirement Number/BRAND.md`, sampled from the live site.
